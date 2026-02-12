@@ -30,12 +30,13 @@ Se non vi sentite particolarmente creativi, questa potrebbe essere un’implemen
 
 -deve chiedere il numero di km da percorrere
 -deve chiedere l'età del passeggiero
+
 SE l'eta del passeggiero è minore a 18
-    -calcolo il km x prezzo 
-    -applico il 20 percento
+    -calcolo il km x prezzo e applico il 20% di sconto
+
 ALTRIEMNTI SE l'eta del passeggiero è maggiore di 65
-    -calcolo il km x prezzo 
-    -applico il 40 percento
+
+    -calcolo il km x prezzo e applico il 40% di sconto
 
 ALTRIMENTI
     -calcolo il km x prezzo
@@ -54,6 +55,29 @@ const userAge = document.getElementById('age');
 //Costo fisso del KM
 const kmPrice = 0.21;
 
-//Calcol il prezzo finale con con il valore delle'elemnto KM X il costo fisso del KM
-const finalPrice = km.value * kmPrice
-console.log(finalPrice);
+//Calcolo il prezzo finale con con il valore delle'elemnto KM X il costo fisso del KM
+let finalPrice = km.value * kmPrice;
+
+//SE l'eta del passeggiero è minore a 18
+if(userAge.value < 18) {
+
+    //calcolo il km x prezzo e applico il 20% di sconto
+    finalPrice = finalPrice * 0.80
+    
+    
+    //ALTRIEMNTI SE l'eta del passeggiero è maggiore di 65          
+} else if (userAge.value >= 65) {
+    
+    //calcolo il km x prezzo e applico il 40% di sconto
+    finalPrice = finalPrice * 0.60
+    
+    
+    //ALTRIMENTI    
+}  else {
+    //calcolo il km x prezzo
+    finalPrice = finalPrice;
+    
+}
+
+//loggo il prezzo
+console.log(finalPrice.toFixed(2));
