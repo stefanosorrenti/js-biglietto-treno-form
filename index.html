@@ -14,13 +14,19 @@
     <!--Main content-->
     <main>
         <!--FORM-->
-        <!--<form>-->
+        <form class="train-tickets">
             <label for="km">Quanto dista la tua meta?</label>
-            <input type="text" name="km" id="km" value="100">
-            <input type="text" name="age" id="age" value="10">
+            <input type="text" name="km" id="km">
             <label for="age">Qual'è la tua età?</label>
-            <button>Calcola prezzo!</button>
-        <!--</form>-->
+            <input type="text" name="age" id="age">
+            <button type="submit">Calcola prezzo!</button>
+        </form>
+
+        <div class="ticket-info">
+            <span class="user-km"></span>
+            <span class="user-age"></span>
+            <span class="ticket-price"></span>
+        </div>
     </main>
 
 

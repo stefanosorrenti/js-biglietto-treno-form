@@ -46,47 +46,84 @@ ALTRIMENTI
 
 
 //DATA
-//Seleziono il nodo  che contine l'input che chiede i KM da percorrere
+//Seleziono il nodo  che contine l'input che chiede i KM da percorrere.
 const km = document.getElementById('km');
 
 //Seleziono il nodo  che contine l'input che chiede l'eta dell'utente.
 const userAge = document.getElementById('age');
 
-//Costo fisso del KM
-const kmPrice = 0.21;
+//Seleziono il nodo che contiene il form.
+const formEl = document.querySelector('.train-tickets')
 
-//Calcolo il prezzo finale con con il valore delle'elemnto KM X il costo fisso del KM
-let finalPrice = km.value * kmPrice;
+//Seleziono il nodo per stampare i KM da percorrere
+const stampKm = document.querySelector('.user-km')
+
+//Seleziono il nodo per stampare il l'eta in pagina
+const stampAge = document.querySelector('.user-age')
+
+//Selezionoil nodo per stamapre il prezzo finale
+const stampTicketPrice = document.querySelector('.ticket-price')
+
+
+
+
+
 
 
 
 //LOGIC
 
 
-//SE l'eta del passeggiero è minore a 18
-if(userAge.value < 18) {
 
-    //calcolo il km x prezzo e applico il 20% di sconto
-    finalPrice = finalPrice * 0.80
+
+//CREAIAMO L'EVENTO QUANDO IL FORM VIENE COMPILATO E INVIATO
+formEl.addEventListener('submit', function(e){ //
+    e.preventDefault()
+
+    //Costo fisso del KM.
+    const kmPrice = 0.21;
     
+    //Calcolo il prezzo finale con con il valore delle'elemnto KM X il costo fisso del KM.
+    let finalPrice = km.value * kmPrice;
     
-    //ALTRIEMNTI SE l'eta del passeggiero è maggiore di 65          
-} else if (userAge.value >= 65) {
+
+    //SE l'eta del passeggiero è minore a 18
+    if(userAge.value < 18) {
+        
+        //calcolo il km x prezzo e applico il 20% di sconto
+        finalPrice = finalPrice * 0.80
+        
+        
+        //ALTRIEMNTI SE l'eta del passeggiero è maggiore di 65          
+    } else if (userAge.value >= 65) {
+        
+        //calcolo il km x prezzo e applico il 40% di sconto
+        finalPrice = finalPrice * 0.60
+        
+        
+        
+        //ALTRIMENTI    
+    }  else {
+        //calcolo il km x prezzo
+        finalPrice = finalPrice;
+        
+    }
+
+    stampKm.innerHTML = `KM da percorrere: ${km.value}`
     
-    //calcolo il km x prezzo e applico il 40% di sconto
-    finalPrice = finalPrice * 0.60
+    stampAge.innerHTML = `Età del passeggiero: ${userAge.value}`
     
+    stampTicketPrice.innerHTML = `Il prezzo del biglietto è: ${finalPrice.toFixed(2)}€`
     
-    //ALTRIMENTI    
-}  else {
-    //calcolo il km x prezzo
-    finalPrice = finalPrice;
-    
-}
+    console.log(`Distanza in KM: ${km.value}`);
+    console.log(`Età' del passeggiero: ${userAge.value}`);
+    console.log(`Il prezzo del biglietto è: ${finalPrice.toFixed(2)}€`);
+})
+
+
+
+
+
 
 //Loggo le varie informzioni del programma
-console.log(`Prezzo finale: ${finalPrice.toFixed(2)}`);
-console.log(`Distanza in KM: ${km.value}`);
-console.log(`Età' del passeggiero: ${userAge.value}`);
-
 
