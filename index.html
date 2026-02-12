@@ -1,62 +1,110 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Biglietto Treno Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <!--Style-->
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biglietto Treno Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    <!--Header-->
-    <header>
-      <h1>Acquista il tuo biglietto!</h1>
-      <p>Acquista il tuo biglietto compilando i campi in sovraimpressione.
-        ricorda che per i minorenni è previsto uno sconto del <span class="discount">20%</span>
-        e per gli Over-65 uno del <span class="discount">40%</span>!
-      </p>
-    </header>
- 
-    <!--Main content-->
-    <main>
+  <!--Style-->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!--Header-->
+  <header>
+    <h1>Acquista il tuo biglietto!</h1>
+    <p>Acquista il tuo biglietto compilando i campi in sovraimpressione.
+      ricorda che per i minorenni è previsto uno sconto del <span class="discount">20%</span>
+      e per gli Over-65 uno del <span class="discount">40%</span>!
+    </p>
+  </header>
+
+  <!--Main content-->
+  <main>
+    <div class="container">
+
+      <!--ROWS-->
+      <div class="row">
+
         <!--FORM-->
-        <form class="train-tickets">
-            <!--Ask KM-->
-            <label for="km">Quanto dista la tua meta?</label>
-            <input type="text" name="km" id="km">
+        <form class="train-tickets col-6">
 
-            <!--Ask full name-->
-            <label for="fullname">Nome e Cognome</label>
-            <input type="text" name="fullname" id="fullname">
-            <label for="age">Qual'è la tua età?</label>
+          <!--User data card layout-->
+          <div class="card mt-5">
 
-            <!--Ask age-->
-            <select name="age" id="age">
+            <!--Card Body-->
+            <div class="card-body">
+
+              <!--Card title-->
+              <h2 class="card-title">Inserisci i tuoi dati!</h2>
+
+              <!--Ask KM-->
+              <label for="km" class="fs-3 text-black">Quanto dista la tua meta?</label>
+              <input type="text" placeholder="Inserisci la distanza in KM" name="km" id="km" class="form-control">
+
+
+
+
+
+              <!--Ask full name-->
+              <label for="fullname" class="fs-3 text-black">Nome e Cognome</label>
+              <input type="text" placeholder="Inserisci tuo Nome e il tuo Cognome" name="fullname" id="fullname"
+                class="form-control">
+
+
+
+
+
+              <!--Ask age-->
+              <label for="age" class="fs-3 text-black">Fascia d'età?</label>
+              <select name="age" id="age" class="form-select">
+                <option selected>Appartengo alla fascia...</option>
                 <option value="MINORENNE">Minorenne</option>
                 <option value="MAGGIORENNE">Maggiorenne</option>
                 <option value="OVER-65">Over-65</option>
-            </select>
+              </select>
 
-            <!--Submit-->
-            <button>Calcola prezzo!</button>
+
+
+              <!--Submit-->
+              <button class="btn btn-primary mt-1">Calcola prezzo!</button>
+            </div>
+          </div>
         </form>
 
-        <!--Ticket section-->
-        <section class="ticket-info">
-            <span class="user-km"></span>
-            <span class="user-age"></span>
-            <span class="ticket-price"></span>
-        </section>
-    </main>
+        <!--Ticket info section-->
+        <div class="col-6">
+          <section class="ticket-info">
+            <div class="card mt-5">
+              <div class="card-body">
+                <h2 class="card-title">Anteprima Biglietto.</h2>
+                <span class="user-fullname fs-3"></span>
+                <span class="user-km fs-3"></span>
+                <span class="user-age fs-3"></span>
+                <span class="ticket-price fs-3"></span>
+                <button class="d-none"></button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </div>
 
 
-    <!--MAIN JS-->
-    <script src="./js/main.js"></script>
+  </main>
 
-    <!--Bootstrap JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+
+  <!--MAIN JS-->
+  <script src="./js/main.js"></script>
+
+  <!--Bootstrap JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
