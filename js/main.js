@@ -58,6 +58,11 @@ const kmPrice = 0.21;
 //Calcolo il prezzo finale con con il valore delle'elemnto KM X il costo fisso del KM
 let finalPrice = km.value * kmPrice;
 
+
+
+//LOGIC
+
+
 //SE l'eta del passeggiero è minore a 18
 if(userAge.value < 18) {
 
@@ -79,5 +84,9 @@ if(userAge.value < 18) {
     
 }
 
-//loggo il prezzo
-console.log(finalPrice.toFixed(2));
+//Loggo le varie informzioni del programma
+console.log(`Prezzo finale: ${finalPrice.toFixed(2)}`);
+console.log(`Distanza in KM: ${km.value}`);
+console.log(`Età' del passeggiero: ${userAge.value}`);
+
+
