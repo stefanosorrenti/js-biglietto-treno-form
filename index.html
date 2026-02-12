@@ -15,18 +15,32 @@
     <main>
         <!--FORM-->
         <form class="train-tickets">
+            <!--Ask KM-->
             <label for="km">Quanto dista la tua meta?</label>
             <input type="text" name="km" id="km">
+
+            <!--Ask full name-->
+            <label for="fullname">Nome e Cognome</label>
+            <input type="text" name="fullname" id="fullname">
             <label for="age">Qual'è la tua età?</label>
-            <input type="text" name="age" id="age">
-            <button type="submit">Calcola prezzo!</button>
+
+            <!--Ask age-->
+            <select name="age" id="age">
+                <option value="MINORENNE">Minorenne</option>
+                <option value="MAGGIORENNE">Maggiorenne</option>
+                <option value="OVER-65">Over-65</option>
+            </select>
+
+            <!--Submit-->
+            <button>Calcola prezzo!</button>
         </form>
 
-        <div class="ticket-info">
+        <!--Ticket section-->
+        <section class="ticket-info">
             <span class="user-km"></span>
             <span class="user-age"></span>
             <span class="ticket-price"></span>
-        </div>
+        </section>
     </main>
 
 

@@ -49,8 +49,9 @@ ALTRIMENTI
 //Seleziono il nodo  che contine l'input che chiede i KM da percorrere.
 const km = document.getElementById('km');
 
-//Seleziono il nodo  che contine l'input che chiede l'eta dell'utente.
+//Seleziono il nodo  che contine l'input che chiede la fascia d'eta del passegiero.
 const userAge = document.getElementById('age');
+
 
 //Seleziono il nodo che contiene il form.
 const formEl = document.querySelector('.train-tickets')
@@ -79,23 +80,23 @@ const stampTicketPrice = document.querySelector('.ticket-price')
 //CREAIAMO L'EVENTO QUANDO IL FORM VIENE INVIATO
 formEl.addEventListener('submit', function(e){ //EVENTO IN ASCOLTO DEL SUBMIT
     e.preventDefault()
-
+    
     //Costo fisso del KM.
     const kmPrice = 0.21;
     
     //Calcolo il prezzo finale con con il valore delle'elemnto KM X il costo fisso del KM.
     let finalPrice = km.value * kmPrice;
     
-
+    
     //SE l'eta del passeggiero è minore a 18
-    if(userAge.value < 18) {
+    if(userAge.value === 'MINORENNE') {
         
         //calcolo il km x prezzo e applico il 20% di sconto
         finalPrice = finalPrice * 0.80
         
         
         //ALTRIEMNTI SE l'eta del passeggiero è maggiore di 65          
-    } else if (userAge.value >= 65) {
+    } else if (userAge.value === 'OVER-65') {
         
         //calcolo il km x prezzo e applico il 40% di sconto
         finalPrice = finalPrice * 0.60
@@ -108,15 +109,16 @@ formEl.addEventListener('submit', function(e){ //EVENTO IN ASCOLTO DEL SUBMIT
         finalPrice = finalPrice;
         
     }
-
+    
+    
     stampKm.innerHTML = `KM da percorrere: ${km.value}` //Stampo i KM da percorrere in pagina
     
-    stampAge.innerHTML = `Età del passeggiero: ${userAge.value}` //Stampo l'età inserita dall'utente in pagina
+    stampAge.innerHTML = `Fascia d'età del passeggiero: ${userAge.value}` //Stampo la fascia d'eta dell'utente in pagina
     
     stampTicketPrice.innerHTML = `Il prezzo del biglietto è: ${finalPrice.toFixed(2)}€` //Stampo il prezzo del biglietto in pagina
     
     console.log(`Distanza in KM: ${km.value}`);
-    console.log(`Età' del passeggiero: ${userAge.value}`);
+    console.log(`Fascia d'età: ${userAge.value}`);
     console.log(`Il prezzo del biglietto è: ${finalPrice.toFixed(2)}€`);
 })
 
@@ -124,6 +126,4 @@ formEl.addEventListener('submit', function(e){ //EVENTO IN ASCOLTO DEL SUBMIT
 
 
 
-
-//Loggo le varie informzioni del programma
 
