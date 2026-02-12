@@ -3,4 +3,34 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+
+
+}
+/*GENERICS*/
+
+img {
+    max-width: 100%;
+}
+/* body {
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    
+}
+ */
+
+
+/*UTILITY*/
+
+
+/*HEADER*/
+header {
+    background-color: rgb(23, 130, 165);
+    color: white;
+    padding: 15px;
+    border-left: 10px solid red;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.discount {
+    background-color: red;
 }
