@@ -40,5 +40,20 @@ ALTRIEMNTI SE l'eta del passeggiero è maggiore di 65
 ALTRIMENTI
     -calcolo il km x prezzo
 
-    
+
 */
+
+
+//DATA
+//Seleziono il nodo  che contine l'input che chiede i KM da percorrere
+const km = document.getElementById('km');
+
+//Seleziono il nodo  che contine l'input che chiede l'eta dell'utente.
+const userAge = document.getElementById('age');
+
+//Costo fisso del KM
+const kmPrice = 0.21;
+
+//Calcol il prezzo finale con con il valore delle'elemnto KM X il costo fisso del KM
+const finalPrice = km.value * kmPrice
+console.log(finalPrice);
