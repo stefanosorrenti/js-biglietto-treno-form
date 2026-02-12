@@ -76,8 +76,8 @@ const stampTicketPrice = document.querySelector('.ticket-price')
 
 
 
-//CREAIAMO L'EVENTO QUANDO IL FORM VIENE COMPILATO E INVIATO
-formEl.addEventListener('submit', function(e){ //
+//CREAIAMO L'EVENTO QUANDO IL FORM VIENE INVIATO
+formEl.addEventListener('submit', function(e){ //EVENTO IN ASCOLTO DEL SUBMIT
     e.preventDefault()
 
     //Costo fisso del KM.
@@ -109,11 +109,11 @@ formEl.addEventListener('submit', function(e){ //
         
     }
 
-    stampKm.innerHTML = `KM da percorrere: ${km.value}`
+    stampKm.innerHTML = `KM da percorrere: ${km.value}` //Stampo i KM da percorrere in pagina
     
-    stampAge.innerHTML = `Età del passeggiero: ${userAge.value}`
+    stampAge.innerHTML = `Età del passeggiero: ${userAge.value}` //Stampo l'età inserita dall'utente in pagina
     
-    stampTicketPrice.innerHTML = `Il prezzo del biglietto è: ${finalPrice.toFixed(2)}€`
+    stampTicketPrice.innerHTML = `Il prezzo del biglietto è: ${finalPrice.toFixed(2)}€` //Stampo il prezzo del biglietto in pagina
     
     console.log(`Distanza in KM: ${km.value}`);
     console.log(`Età' del passeggiero: ${userAge.value}`);
