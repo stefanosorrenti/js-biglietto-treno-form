@@ -52,6 +52,8 @@ const km = document.getElementById('km');
 //Seleziono il nodo  che contine l'input che chiede la fascia d'eta del passegiero.
 const userAge = document.getElementById('age');
 
+//Seleziono il node che contiener l'input che domanda il nome all'utente.
+const userFullName = document.getElementById('fullname')
 
 //Seleziono il nodo che contiene il form.
 const formEl = document.querySelector('.train-tickets')
@@ -62,8 +64,13 @@ const stampKm = document.querySelector('.user-km')
 //Seleziono il nodo per stampare il l'eta in pagina
 const stampAge = document.querySelector('.user-age')
 
-//Selezionoil nodo per stamapre il prezzo finale
+//Seleziono il nodo per stamapre il prezzo finale
 const stampTicketPrice = document.querySelector('.ticket-price')
+
+//Seleziono il nodo per stampare il nome dell'utente
+const stampUserName = document.querySelector('.user-fullname')
+
+
 
 
 
@@ -110,13 +117,14 @@ formEl.addEventListener('submit', function(e){ //EVENTO IN ASCOLTO DEL SUBMIT
         
     }
     
+    stampUserName.innerHTML = `${userFullName.value}`
+    stampKm.innerHTML = `${km.value}` //Stampo i KM da percorrere in pagina
     
-    stampKm.innerHTML = `KM da percorrere: ${km.value}` //Stampo i KM da percorrere in pagina
+    stampAge.innerHTML = `${userAge.value}` //Stampo la fascia d'eta dell'utente in pagina
     
-    stampAge.innerHTML = `Fascia d'età del passeggiero: ${userAge.value}` //Stampo la fascia d'eta dell'utente in pagina
+    stampTicketPrice.innerHTML = `${finalPrice.toFixed(2)}€` //Stampo il prezzo del biglietto in pagina
     
-    stampTicketPrice.innerHTML = `Il prezzo del biglietto è: ${finalPrice.toFixed(2)}€` //Stampo il prezzo del biglietto in pagina
-    
+    console.log(`Il biglietto è intestato a: ${stampUserName.value}`);
     console.log(`Distanza in KM: ${km.value}`);
     console.log(`Fascia d'età: ${userAge.value}`);
     console.log(`Il prezzo del biglietto è: ${finalPrice.toFixed(2)}€`);
