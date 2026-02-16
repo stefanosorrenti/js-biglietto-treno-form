@@ -34,13 +34,15 @@
         <form class="train-tickets col-6">
 
           <!--User data card layout-->
-          <div class="card mt-5">
+          <div class="card mt-5 heig">
 
             <!--Card Body-->
             <div class="card-body">
 
-              <!--Card title-->
-              <h2 class="card-title">Inserisci i tuoi dati!</h2>
+              <!--Card Header-->
+              <div class="card-header">
+                <h2 class="card-title">Inserisci i tuoi dati!</h2>
+              </div>
 
               <!--Ask KM-->
               <label for="km" class="fs-3 text-black">Quanto dista la tua meta?</label>
@@ -71,7 +73,7 @@
 
 
               <!--Submit-->
-              <button class="btn btn-primary mt-1">Calcola prezzo!</button>
+              <button class="btn btn-primary mt-4">Calcola prezzo!</button>
             </div>
           </div>
         </form>
@@ -79,20 +81,34 @@
         <!--Ticket info section-->
         <div class="col-6">
           <section class="ticket-info">
-            <div class="card mt-5">
-              <div class="card-body">
-                <h2 class="card-title">Anteprima Biglietto.</h2>
+
+            <!--Card layout-->
+            <div class="card mt-5 heig">
+
+              <!--Card Body-->
+              <div class="card-body ">
+
+                <!--Card header-->
+                <div class="card-header">
+                  <h2 class="card-title">Anteprima Biglietto.</h2>
+                </div>
+
+                <!--Tickest info list-->
                 <ul class="fs-3 list-group">
-                  <li class="list-group-item list-group-item-light">Intestato a: <span class="user-fullname fs-3"></span></li>
-                  <li class="list-group-item list-group-item-light">Kilometri da percorrere: <span class="user-km fs-3"></span></li>
-                  <li class="list-group-item list-group-item-light">Fascia d'età: <span class="user-age fs-3"></span></li>
-                  <li class="list-group-item list-group-item-light">Prezzo del biglietto: <span class="ticket-price fs-3"></span></li>
+                  <li class="list-group-item list-group-item-light">Intestato a: <span
+                      class="user-fullname fs-3"></span></li>
+                  <li class="list-group-item list-group-item-light">Kilometri da percorrere: <span
+                      class="user-km fs-3"></span></li>
+                  <li class="list-group-item list-group-item-light">Fascia d'età: <span class="user-age fs-3"></span>
+                  </li>
+                  <li class="list-group-item list-group-item-light">Prezzo del biglietto: <span
+                      class="ticket-price fs-3"></span></li>
                 </ul>
-                
-                
-                
-                
-                <button class="d-none"></button>
+
+
+
+                <!--Pay button-->
+                <button class="btn btn-secondary mt-4">Acquista il biglietto.</button>
               </div>
             </div>
           </section>

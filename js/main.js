@@ -70,9 +70,9 @@ const stampTicketPrice = document.querySelector('.ticket-price')
 //Seleziono il nodo per stampare il nome dell'utente
 const stampUserName = document.querySelector('.user-fullname')
 
-
-
-
+//Seleziono il nodo per darà dinamicità al bottono per l'acquisto
+const payButton = document.querySelector('.btn-secondary')
+console.log(payButton);
 
 
 
@@ -80,8 +80,6 @@ const stampUserName = document.querySelector('.user-fullname')
 
 
 //LOGIC
-
-
 
 
 //CREAIAMO L'EVENTO QUANDO IL FORM VIENE INVIATO
@@ -124,6 +122,9 @@ formEl.addEventListener('submit', function(e){ //EVENTO IN ASCOLTO DEL SUBMIT
     
     stampTicketPrice.innerHTML = `${finalPrice.toFixed(2)}€` //Stampo il prezzo del biglietto in pagina
     
+    payButton.className = `btn btn-primary mt-4` //cambio il colore del pulsante quando il form è stato inviato.
+
+    //LOGS
     console.log(`Il biglietto è intestato a: ${stampUserName.value}`);
     console.log(`Distanza in KM: ${km.value}`);
     console.log(`Fascia d'età: ${userAge.value}`);
